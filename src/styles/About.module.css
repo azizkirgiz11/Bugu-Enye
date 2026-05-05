@@ -1,0 +1,200 @@
+:root {
+  --forest: #1B3320;
+  --gold: #D4AF37;
+  --cream: #FDFDFB;
+  --text: #2C3E50;
+}
+
+.pageWrapper {
+  background-color: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.heroSection {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.parallaxBg {
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+  z-index: -1;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--forest));
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.topLabel {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.mainTitle {
+  font-size: clamp(3rem, 8vw, 5rem);
+  line-height: 1;
+  margin-bottom: 25px;
+  font-weight: 800;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.mainLead {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Story Section */
+.storySection {
+  padding: 120px 5%;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+}
+
+.storyImg {
+  width: 100%;
+  border-radius: 40px 0 40px 0;
+  box-shadow: 30px 30px 0 var(--gold);
+}
+
+.imgBadge {
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  background: var(--forest);
+  color: white;
+  padding: 15px 30px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.storyText h2 {
+  font-size: 3rem;
+  color: var(--forest);
+  margin-bottom: 30px;
+  line-height: 1.1;
+}
+
+/* Goals Grid */
+.goalsSection {
+  background: #f4f7f1;
+  padding: 100px 5%;
+}
+
+.centeredHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.goalCard {
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+  transition: 0.4s;
+}
+
+.goalCard:hover {
+  transform: translateY(-15px);
+  background: var(--forest);
+  color: white;
+}
+
+.goalIcon {
+  font-size: 3rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+/* Donate Section */
+.donateSection {
+  padding: 100px 5%;
+  background: linear-gradient(45deg, #122416, var(--forest));
+  color: white;
+}
+
+.donateContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.bankCard {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  min-width: 400px;
+}
+
+.elsomBadge {
+  margin-top: 30px;
+  background: var(--gold);
+  color: var(--forest);
+  padding: 10px;
+  text-align: center;
+  font-weight: 800;
+  border-radius: 50px;
+}
+
+/* Mobile */
+@media (max-width: 968px) {
+  .storyGrid, .donateContainer {
+    grid-template-columns: 1fr;
+    display: block;
+  }
+  .bankCard { min-width: unset; margin-top: 40px; }
+  .storyImg { margin-bottom: 60px; }
+}

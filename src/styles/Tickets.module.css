@@ -1,0 +1,132 @@
+.wrapper {
+  background-color: #fcfdfa;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('https://images.unsplash.com/photo-1534567153574-2b12153a87f0?auto=format&fit=crop&w=1200'); /* Doğal bir hayvanat bahçesi görseli */
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: -50px;
+}
+
+.heroContent h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 40px 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid #f0f3eb;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 20px 40px rgba(85, 107, 47, 0.15);
+}
+
+.iconWrapper {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.desc {
+  color: #777;
+  font-size: 0.95rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+  height: 45px;
+}
+
+.priceTag {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+}
+
+.amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #556b2f;
+}
+
+.currency {
+  font-size: 1.1rem;
+  color: #888;
+}
+
+.free {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6b8e23;
+  text-transform: uppercase;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.infoBox {
+  background: #f1f4ec;
+  padding: 30px;
+  border-radius: 20px;
+  border-left: 6px solid #556b2f;
+}
+
+.infoBox h4 {
+  color: #556b2f;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.infoBox p, .infoBox li {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.smallNote {
+  font-style: italic;
+  margin-top: 15px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+}

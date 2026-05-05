@@ -1,0 +1,80 @@
+/* src/styles/Header.module.css */
+.mainHeader {
+  background-color: #ffffff;
+  padding: 10px 5%;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  gap: 12px;
+}
+
+.headerLogo {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  color: #556b2f;
+  font-weight: 800;
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.brandSub {
+  color: #8c8c8c;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.navMenu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover, .activeLink {
+  color: #556b2f;
+}
+
+.ticketButton {
+  background-color: #556b2f;
+  color: white !important;
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease;
+}
+
+.ticketButton:hover {
+  background-color: #6b8e23;
+  transform: translateY(-2px);
+}

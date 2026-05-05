@@ -1,0 +1,126 @@
+.footer {
+  background-color: #f9fbf7;
+  padding: 60px 5% 20px;
+  border-top: 1px solid #e2e8da;
+  color: #444;
+  margin-top: 50px;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  /* Grid yapısını 3 sütun olacak şekilde optimize ettik */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+}
+
+.section h4 {
+  color: #556b2f;
+  margin-bottom: 22px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-bottom: 3px solid #556b2f;
+  display: inline-block;
+  padding-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Bağış Kutusu İyileştirmesi */
+.donationBox {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(85, 107, 47, 0.05);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  border: 1px solid #f0f3eb;
+}
+
+.bankTitle {
+  font-weight: 800;
+  color: #005dab;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+/* İletişim Satırları */
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.contactItem a {
+  text-decoration: none;
+  color: #444;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.contactItem a:hover {
+  color: #556b2f;
+}
+
+.contactIcon {
+  color: #556b2f;
+  font-size: 1.1rem;
+}
+
+/* Sosyal Medya Logoları - Contact Altında */
+.socialLinks {
+  display: flex;
+  gap: 18px;
+  margin-top: 25px; /* İletişim bilgilerinden sonra boşluk */
+  padding-top: 15px;
+  border-top: 1px dashed #dcdcdc; /* Hafif bir ayırıcı çizgi */
+}
+
+.socialIcon {
+  font-size: 1.6rem;
+  color: #556b2f;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+}
+
+.socialIcon:hover {
+  transform: translateY(-5px);
+  color: #6b8e23;
+}
+
+.address {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.bottomBar {
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8da;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.qrContainer {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.qrImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  padding: 5px;
+  background: white;
+  border: 1px solid #e2e8da;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
