@@ -20,16 +20,16 @@ const Home = () => {
 
   // PROFESYONEL MASSİV (Resim linkleri yenilendi)
   const animalsData = [
-    { id: 1, name: "Снежный барс (Илбирс)", species: "Panthera uncia", img: "https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=1600&auto=format&fit=crop", desc: "Символ наших гор, занесен в Красную книгу." },
-    { id: 2, name: "Тянь-Шаньский медведь", species: "Ursus arctos isabellinus", img: "https://images.unsplash.com/photo-1589656966895-2f33e7653819?q=80&w=1600&auto=format&fit=crop", desc: "Редкий подвид бурого медведя." },
-    { id: 3, name: "Благородный олень", species: "Cervus elaphus", img: "https://images.unsplash.com/photo-1503066211613-c17ebc9daef0?q=80&w=1600&auto=format&fit=crop", desc: "Гордость лесов Иссык-Куля." },
-    { id: 4, name: "Серый волк", species: "Canis lupus", img: "https://images.unsplash.com/photo-1590226466361-b51c3ee72ce7?q=80&w=1600&auto=format&fit=crop", desc: "Санитар леса и степей." },
-    { id: 5, name: "Туркестанская рысь", species: "Lynx lynx", img: "https://images.unsplash.com/photo-1634731791152-3269b0c74d6b?q=80&w=1600&auto=format&fit=crop", desc: "Грациозная и скрытная дикая кошка." },
-    { id: 6, name: "Беркут", species: "Aquila chrysaetos", img: "https://images.unsplash.com/photo-1611003184650-7f28edb6dd1b?q=80&w=1600&auto=format&fit=crop", desc: "Величественный орел, символ свободы." },
-    { id: 7, name: "Горный козел (Теке)", species: "Capra sibirica", img: "https://images.unsplash.com/photo-1552410260-0fd9b577afa6?q=80&w=1600&auto=format&fit=crop", desc: "Непревзойденный скалолаз." },
-    { id: 8, name: "Двугорбый верблюд", species: "Camelus bactrianus", img: "https://images.unsplash.com/photo-1523906630133-f753f060744c?q=80&w=1600&auto=format&fit=crop", desc: "Корабль пустыни, отлично переносит холод." },
-    { id: 9, name: "Обыкновенная лисица", species: "Vulpes vulpes", img: "https://images.unsplash.com/photo-1516934024742-b461fba47600?q=80&w=1600&auto=format&fit=crop", desc: "Хитрый и умный обитатель наших краев." },
-    { id: 10, name: "Як (Топоз)", species: "Bos mutus", img: "https://images.unsplash.com/photo-1628151016064-038198bb3604?q=80&w=1600&auto=format&fit=crop", desc: "Могучее животное высокогорья." }
+    { id: 1, name: "Снежный барс (Илбирс)", species: "Panthera uncia", img: "https://caravan-info.kg/netcat_files/generated/17/27/1000x500/17601/cf10b2b8ca679d5ef79776490c2a18f3.jpg?crop=0%3A0%3A0%3A0&hash=240a529b6b2cb45213eeb061393802ed&resize_mode=1&wm_m=0", desc: "Символ наших гор, занесен в Красную книгу." },
+    { id: 2, name: "Тянь-Шаньский медведь", species: "Ursus arctos isabellinus", img: "https://avatars.mds.yandex.net/i?id=9dd91c28722887208f93a29d3af04944b07de266-4599985-images-thumbs&n=13", desc: "Редкий подвид бурого медведя." },
+    { id: 3, name: "Благородный олень", species: "Cervus elaphus", img: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cervus_elaphus_Luc_Viatour_6.jpg", desc: "Гордость лесов Иссык-Куля." },
+    { id: 4, name: "Серый волк", species: "Canis lupus", img: "https://s0.bloknot-volgodonsk.ru/thumb/850x0xcut/upload/iblock/ca6/volk.jpg", desc: "Санитар леса и степей." },
+    { id: 5, name: "Туркестанская рысь", species: "Lynx lynx", img: "https://yujanka.kz/wp-content/uploads/2019/11/f86dbe2d590697d839ecb6edb6c1c7d9.jpg", desc: "Грациозная и скрытная дикая кошка." },
+    { id: 6, name: "Беркут", species: "Aquila chrysaetos", img: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Maakotka_%28Aquila_chrysaetos%29_by_Jarkko_J%C3%A4rvinen_%28crop%29.jpg", desc: "Величественный орел, символ свободы." },
+    { id: 7, name: "Горный козел (Теке)", species: "Capra sibirica", img: "https://poknok.art/uploads/posts/2022-10/1666638724_1-poknok-art-p-gornii-kozel-1.jpg", desc: "Непревзойденный скалолаз." },
+    { id: 8, name: "Двугорбый верблюд", species: "Camelus bactrianus", img: "https://baibolsyn.kz/media/original_images/3327ceb3a32c52a660c6e826c4f68fdc.jpg", desc: "Корабль пустыни, отлично переносит холод." },
+    { id: 9, name: "Обыкновенная лисица", species: "Vulpes vulpes", img: "https://www.tursar.ru/image/img2081_0.jpg", desc: "Хитрый и умный обитатель наших краев." },
+    { id: 10, name: "Як (Топоз)", species: "Bos mutus", img: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Yak_Kailash.JPG/1280px-Yak_Kailash.JPG?utm_source=en.wiktionary.org&utm_campaign=index&utm_content=thumbnail", desc: "Могучее животное высокогорья." }
   ];
 
   const scheduleData = [
@@ -109,7 +109,7 @@ const Home = () => {
       {/* MAP SECTION (USING ASSET MAP.PNG) */}
       <section className={styles.mapSection}>
         <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Карта зоопарka</h2>
+          <h2 className={styles.sectionTitle}>Карта зоопаркa</h2>
           <p className={styles.sectionSubtitle}>Ваш путеводитель по миру животных</p>
         </div>
 
