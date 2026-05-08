@@ -1,80 +1,134 @@
 /* src/styles/Header.module.css */
 .mainHeader {
-  background-color: #ffffff;
-  padding: 10px 5%;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px) saturate(180%); /* Cam efekti */
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  padding: 0 5%;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1300px;
+  width: 100%;
   margin: 0 auto;
 }
 
+/* LOGO BÖLÜMÜ */
 .logoWrapper {
   display: flex;
   align-items: center;
   text-decoration: none;
-  gap: 12px;
+  gap: 16px;
 }
 
 .headerLogo {
-  height: 60px;
-  width: auto;
-  object-fit: contain;
+  height: 65px;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.logoText {
-  display: flex;
-  flex-direction: column;
+.logoWrapper:hover .headerLogo {
+  transform: rotate(-5deg) scale(1.05);
 }
 
 .brandName {
-  color: #556b2f;
-  font-weight: 800;
-  font-size: 1.4rem;
+  color: #2d3e14;
+  font-weight: 900;
+  font-size: 1.6rem;
   line-height: 1;
+  letter-spacing: -1px;
+  margin: 0;
 }
 
 .brandSub {
-  color: #8c8c8c;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
+  color: #6a7c4c;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
+/* NAVİGASYON */
 .navMenu {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: 10px; /* Butonlar arası mesafe */
+  background: rgba(0, 0, 0, 0.03);
+  padding: 6px;
+  border-radius: 100px;
 }
 
 .navLink {
   text-decoration: none;
-  color: #444;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.navLink:hover, .activeLink {
-  color: #556b2f;
-}
-
-.ticketButton {
-  background-color: #556b2f;
-  color: white !important;
-  padding: 10px 25px;
-  border-radius: 50px;
-  text-decoration: none;
+  color: #555;
   font-weight: 600;
-  transition: transform 0.2s ease;
+  font-size: 0.95rem;
+  padding: 10px 22px;
+  border-radius: 100px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navLink:hover {
+  color: #556b2f;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* Aktif Sayfa - Tıklandığında Kalacak Renk */
+.activeLink {
+  color: #ffffff !important;
+  background: #556b2f;
+  box-shadow: 0 4px 12px rgba(85, 107, 47, 0.25);
+}
+
+/* BİLET BUTONU */
+.ticketButton {
+  margin-left: 20px;
+  background: #2d3e14;
+  color: #fff !important;
+  padding: 12px 30px;
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticketButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.ticketButton:hover::before {
+  left: 100%;
 }
 
 .ticketButton:hover {
-  background-color: #6b8e23;
+  background: #556b2f;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 62, 20, 0.3);
 }

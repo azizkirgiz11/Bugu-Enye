@@ -69,9 +69,8 @@ const Footer = () => {
             </a>
           </div>
 
-          <p className={styles.address}>г. Каракол, ул. Фучика</p>
+          <p className={styles.address}>г. Каракол, ул. Айтматов, 1/2</p>
 
-          {/* Sosyal Medya Logoları (Contact Altında) */}
           <div className={styles.socialLinks}>
             <a
               href="https://www.instagram.com/buguenye_fund/"

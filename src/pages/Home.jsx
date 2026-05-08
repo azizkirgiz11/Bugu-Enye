@@ -20,11 +20,11 @@ const Home = () => {
 
   // PROFESYONEL MASSİV (Resim linkleri yenilendi)
   const animalsData = [
-    { id: 1, name: "Снежный барс (Илбирс)", species: "Panthera uncia", img: "https://caravan-info.kg/netcat_files/generated/17/27/1000x500/17601/cf10b2b8ca679d5ef79776490c2a18f3.jpg?crop=0%3A0%3A0%3A0&hash=240a529b6b2cb45213eeb061393802ed&resize_mode=1&wm_m=0", desc: "Символ наших гор, занесен в Красную книгу." },
-    { id: 2, name: "Тянь-Шаньский медведь", species: "Ursus arctos isabellinus", img: "https://avatars.mds.yandex.net/i?id=9dd91c28722887208f93a29d3af04944b07de266-4599985-images-thumbs&n=13", desc: "Редкий подвид бурого медведя." },
+    { id: 1, name: "Снежный барс (Илбирс)", species: "Panthera uncia", img: "https://images.unsplash.com/photo-1689847190291-f8e0823f13ab?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", desc: "Символ наших гор, занесен в Красную книгу." },
+    { id: 2, name: "Тянь-Шаньский медведь", species: "Ursus arctos isabellinus", img: "https://images.unsplash.com/photo-1599948058230-78896e742f7e?q=80&w=1082&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", desc: "Редкий подвид бурого медведя." },
     { id: 3, name: "Благородный олень", species: "Cervus elaphus", img: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Cervus_elaphus_Luc_Viatour_6.jpg", desc: "Гордость лесов Иссык-Куля." },
-    { id: 4, name: "Серый волк", species: "Canis lupus", img: "https://s0.bloknot-volgodonsk.ru/thumb/850x0xcut/upload/iblock/ca6/volk.jpg", desc: "Санитар леса и степей." },
-    { id: 5, name: "Туркестанская рысь", species: "Lynx lynx", img: "https://yujanka.kz/wp-content/uploads/2019/11/f86dbe2d590697d839ecb6edb6c1c7d9.jpg", desc: "Грациозная и скрытная дикая кошка." },
+    { id: 4, name: "Серый волк", species: "Canis lupus", img: "https://i.pinimg.com/736x/e8/a8/45/e8a8459613902ce1631a5293c60f636e.jpg", desc: "Санитар леса и степей." },
+    { id: 5, name: "Туркестанская рысь", species: "Lynx lynx", img: "https://i.pinimg.com/736x/a2/b3/27/a2b32713e16e6f629789482c7d33ec53.jpg", desc: "Грациозная и скрытная дикая кошка." },
     { id: 6, name: "Беркут", species: "Aquila chrysaetos", img: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Maakotka_%28Aquila_chrysaetos%29_by_Jarkko_J%C3%A4rvinen_%28crop%29.jpg", desc: "Величественный орел, символ свободы." },
     { id: 7, name: "Горный козел (Теке)", species: "Capra sibirica", img: "https://poknok.art/uploads/posts/2022-10/1666638724_1-poknok-art-p-gornii-kozel-1.jpg", desc: "Непревзойденный скалолаз." },
     { id: 8, name: "Двугорбый верблюд", species: "Camelus bactrianus", img: "https://baibolsyn.kz/media/original_images/3327ceb3a32c52a660c6e826c4f68fdc.jpg", desc: "Корабль пустыни, отлично переносит холод." },

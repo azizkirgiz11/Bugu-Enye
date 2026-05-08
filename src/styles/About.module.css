@@ -1,200 +1,156 @@
 :root {
-  --forest: #1B3320;
-  --gold: #D4AF37;
-  --cream: #FDFDFB;
-  --text: #2C3E50;
+  --accent: #1e392a;
+  --gold: #b8964d;
+  --sand: #f0ede4; /* Daha yumuşak, biraz daha koyu premium kum rengi */
+  --white: #ffffff;
+  --text-dark: #1a1a1a;
+  --text-light: #5e5e5e;
+}
+
+.heroText {
+  font-size: 1.2rem;
+  margin-top: 30px;
+  color: #f0f3eb;
+  font-weight: 500;
+  
 }
 
 .pageWrapper {
-  background-color: var(--cream);
-  color: var(--text);
+  background-color: var(--sand);
+  color: var(--text-dark);
+  font-family: 'Inter', -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
-/* Hero Section */
+/* --- HERO SECTION --- */
 .heroSection {
+  position: relative;
   height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  text-align: center;
-  color: white;
 }
 
 .parallaxBg {
   position: absolute;
   inset: 0;
-  background: url('https://images.unsplash.com/photo-1547970810-dc1eac37d174?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
-  z-index: -1;
+  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2000') center/cover no-repeat;
+  z-index: 1;
 }
 
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.2), var(--forest));
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 2;
 }
 
 .heroContent {
   position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 20px;
+  z-index: 3;
+  text-align: center;
+  color: var(--white);
 }
 
-.topLabel {
-  display: block;
+.heroContent h1 {
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 4px;
-  color: var(--gold);
-  margin-bottom: 20px;
-  font-weight: 600;
+  line-height: 0.8;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.mainTitle {
-  font-size: clamp(3rem, 8vw, 5rem);
-  line-height: 1;
-  margin-bottom: 25px;
-  font-weight: 800;
-  text-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.mainLead {
-  font-size: 1.4rem;
-  opacity: 0.9;
-  font-weight: 300;
-}
-
-/* Story Section */
-.storySection {
-  padding: 120px 5%;
-}
-
-.storyGrid {
+/* --- EDITORIAL SECTION (Görsel Düzenleme Burada) --- */
+.editorialSection {
+  padding: 150px 10%;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 100px;
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.imageWrapper {
+.imageGrid {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.storyImg {
-  width: 100%;
-  border-radius: 40px 0 40px 0;
-  box-shadow: 30px 30px 0 var(--gold);
+/* Büyük ve baskın olan: Ayı Görseli */
+.mainImg {
+  width: 70%;
+  height: 400px;
+  bottom: 70px;
+  right: 30px; 
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  z-index: 1;
 }
 
-.imgBadge {
+/* Küçük ve detay olan: Leopar Görseli */
+.secondaryImg {
   position: absolute;
-  bottom: -20px;
-  right: 20px;
-  background: var(--forest);
-  color: white;
-  padding: 15px 30px;
-  font-weight: bold;
-  border-radius: 10px;
+  width: 60%;
+  height: 300px;
+  object-fit: cover;
+  bottom: -70px;
+  right: -30px;
+  border: 12px solid var(--sand); /* Arka planla bütünleşen kalın çerçeve */
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  z-index: 2;
 }
 
-.sectionHeader {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--gold);
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.storyText h2 {
-  font-size: 3rem;
-  color: var(--forest);
-  margin-bottom: 30px;
-  line-height: 1.1;
-}
-
-/* Goals Grid */
-.goalsSection {
-  background: #f4f7f1;
-  padding: 100px 5%;
-}
-
-.centeredHeader {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.goalsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.goalCard {
-  background: white;
-  padding: 50px;
-  border-radius: 30px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.05);
-  transition: 0.4s;
-}
-
-.goalCard:hover {
-  transform: translateY(-15px);
-  background: var(--forest);
-  color: white;
-}
-
-.goalIcon {
-  font-size: 3rem;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-/* Donate Section */
-.donateSection {
-  padding: 100px 5%;
-  background: linear-gradient(45deg, #122416, var(--forest));
-  color: white;
-}
-
-.donateContainer {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  gap: 60px;
-  align-items: center;
-}
-
-.bankCard {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  padding: 40px;
-  border-radius: 30px;
-  border: 1px solid rgba(255,255,255,0.1);
-  min-width: 400px;
-}
-
-.elsomBadge {
-  margin-top: 30px;
-  background: var(--gold);
-  color: var(--forest);
-  padding: 10px;
-  text-align: center;
+.textContent h2 {
+  font-size: 3.5rem;
   font-weight: 800;
-  border-radius: 50px;
+  color: var(--accent);
+  margin-bottom: 30px;
+  line-height: 1;
 }
 
-/* Mobile */
-@media (max-width: 968px) {
-  .storyGrid, .donateContainer {
-    grid-template-columns: 1fr;
-    display: block;
-  }
-  .bankCard { min-width: unset; margin-top: 40px; }
-  .storyImg { margin-bottom: 60px; }
+.textContent p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+/* --- BENTO GRID --- */
+.bentoSection {
+  padding: 100px 10%;
+  background-color: var(--white);
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bentoItem {
+  padding: 60px 40px;
+  background: var(--sand);
+  transition: 0.4s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bentoItem:hover {
+  background: var(--accent);
+  color: var(--white) !important;
+  transform: translateY(-10px);
+}
+
+.bentoItem:hover h3, .bentoItem:hover p, .bentoItem:hover svg {
+  color: var(--white) !important;
+}
+
+.dark { background: var(--accent); color: var(--white); }
+.gold { background: var(--gold); color: var(--white); }
+
+@media (max-width: 1100px) {
+  .editorialSection { grid-template-columns: 1fr; gap: 120px; }
+  .secondaryImg { width: 60%; bottom: -80px; }
 }
