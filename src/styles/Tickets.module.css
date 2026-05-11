@@ -130,3 +130,64 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --- SADECE SATIN AL BUTONU VE HİZALAMA EKLEMELERİ --- */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* İçeriği dikeyde yayar */
+  height: 100%; /* Kart boylarını eşitler */
+}
+
+.desc {
+  flex-grow: 1; /* Açıklama alanı esneyerek butonu aşağı iter */
+  height: auto; /* Sabit yüksekliği esnek yapıyoruz */
+  min-height: 50px;
+  margin-bottom: 20px;
+}
+
+.priceTag {
+  margin-top: auto; /* Fiyatı ve butonu kartın dibine sabitler */
+  border-top: 1px solid #f0f0f0;
+  padding: 20px 0 15px 0;
+}
+
+.buyButton {
+  width: 100%;
+  padding: 14px 20px;
+  background-color: #556b2f; /* Temandaki yeşil tonu */
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 10px rgba(85, 107, 47, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buyButton:hover {
+  background-color: #3e4f22; /* Daha koyu yeşil */
+  transform: translateY(-3px); /* Hafif yukarı kalkma */
+  box-shadow: 0 8px 20px rgba(85, 107, 47, 0.3);
+}
+
+.buyButton:active {
+  transform: translateY(-1px); /* Tıklama hissi */
+}
+
+/* Ücretsiz bilet butonu için farklı bir ton (isteğe bağlı) */
+.card:last-child .buyButton {
+  background-color: #6b8e23;
+}
+
+.card:last-child .buyButton:hover {
+  background-color: #556b2f;
+}

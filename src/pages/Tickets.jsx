@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from '../styles/Tickets.module.css';
 import { FaTicketAlt, FaChild, FaUserShield, FaLeaf } from 'react-icons/fa';
 
 const Tickets = () => {
+  const navigate = useNavigate();
+
   const tickets = [
     {
       id: 1,
@@ -38,9 +41,15 @@ const Tickets = () => {
     }
   ];
 
+  const handleBuyClick = (ticket) => {
+    // İkonu objeden ayırıyoruz çünkü ikon "clone" edilemez (hata sebebi budur)
+    const { icon, ...ticketDataWithoutIcon } = ticket;
+    // Gönderirken 'ticket' değil, 'ticketDataWithoutIcon' gönderiyoruz!
+    navigate('/buy-ticket', { state: { selectedTicket: ticketDataWithoutIcon } });
+  };
+
   return (
     <div className={styles.wrapper}>
-      {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
           <h1>Билеты и Цены</h1>
@@ -49,7 +58,6 @@ const Tickets = () => {
       </section>
 
       <div className={styles.container}>
-        {/* Ticket Cards */}
         <div className={styles.grid}>
           {tickets.map((ticket) => (
             <div key={ticket.id} className={styles.card}>
@@ -58,6 +66,7 @@ const Tickets = () => {
               </div>
               <h3>{ticket.category}</h3>
               <p className={styles.desc}>{ticket.description}</p>
+              
               <div className={styles.priceTag}>
                 {ticket.price === "0" ? (
                   <span className={styles.free}>Бесплатно</span>
@@ -68,11 +77,17 @@ const Tickets = () => {
                   </>
                 )}
               </div>
+
+              <button 
+                className={styles.buyButton} 
+                onClick={() => handleBuyClick(ticket)}
+              >
+                {ticket.price === "0" ? "Получить" : "Купить"}
+              </button>
             </div>
           ))}
         </div>
 
-        {/* Info Boxes */}
         <div className={styles.infoGrid}>
           <div className={styles.infoBox}>
             <h4>График работы кассы</h4>
