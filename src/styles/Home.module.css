@@ -1,17 +1,18 @@
-/* Genel Ayarlar */
+/* --- GENEL AYARLAR --- */
 .homeContainer {
   background-color: #fcfdfa;
   font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
 }
 
-/* 1. HERO SLIDER & ARAMA */
+/* --- 1. HERO SLIDER & ARAMA --- */
 .heroSection {
   position: relative;
   width: 100%;
 }
 
 .mainSlider {
-  height: 80vh; /* Ekranın %80'ini kaplar */
+  height: 80vh;
   min-height: 500px;
 }
 
@@ -28,7 +29,6 @@
   object-position: center 20%;
 }
 
-/* Resmi karanlıklaştıran gradient (Yazılar okunsun diye) */
 .imageOverlay {
   position: absolute;
   inset: 0;
@@ -47,7 +47,7 @@
 
 .speciesTag {
   font-family: monospace;
-  color: #d4af37; /* Gold rengi */
+  color: #d4af37;
   font-size: 1rem;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -69,7 +69,6 @@
   line-height: 1.6;
 }
 
-/* Cam Efektli (Glassmorphism) Arama Çubuğu */
 .searchGlass {
   position: absolute;
   bottom: -35px;
@@ -104,11 +103,7 @@
   outline: none;
 }
 
-.searchGlass input::placeholder {
-  color: #777;
-}
-
-/* 2. ORTAK BAŞLIKLAR */
+/* --- 2. ORTAK BAŞLIKLAR --- */
 .sectionHeader {
   text-align: center;
   margin-top: 100px;
@@ -127,90 +122,254 @@
   font-size: 1.1rem;
 }
 
-/* ... (Hero ve Arama kısımlarındaki CSS kodları aynı kalacak) ... */
+/* --- GENEL AYARLAR --- */
+.homeContainer {
+  background-color: #fcfdfa;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
 
-/* 3. ZAMAN ÇİZELGESİ (TEK SIRA - YATAY) */
+/* --- 1. HERO SLIDER & ARAMA --- */
+.heroSection {
+  position: relative;
+  width: 100%;
+}
+
+.mainSlider {
+  height: 80vh;
+  min-height: 500px;
+}
+
+.slideWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 33, 19, 0.95) 0%, rgba(15, 33, 19, 0.4) 50%, rgba(0,0,0,0.1) 100%);
+  z-index: 1;
+}
+
+.slideInfo {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  z-index: 2;
+  color: white;
+  max-width: 600px;
+}
+
+.speciesTag {
+  font-family: monospace;
+  color: #d4af37;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.animalName {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 15px 0;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.animalDesc {
+  font-size: 1.2rem;
+  color: #e2e8da;
+  line-height: 1.6;
+}
+
+.searchGlass {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50px;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.searchIcon {
+  color: #1b3320;
+  font-size: 1.3rem;
+}
+
+.searchGlass input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #333;
+  outline: none;
+}
+
+/* --- 2. ORTAK BAŞLIKLAR --- */
+.sectionHeader {
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  color: #1b3320;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.sectionSubtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* --- 3. DİKEY ZAMAN ÇİZELGESİ --- */
 .scheduleSection {
   padding: 0 5%;
-  max-width: 1300px;
+  max-width: 1100px;
   margin: 0 auto;
+  position: relative;
 }
 
-.timelineRow {
+.verticalTimeline {
+  position: relative;
+  padding: 40px 0;
+}
+
+/* Orta Çizgi */
+.timelineLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #a3b18a;
+  transform: translateX(-50%);
+}
+
+.timelineItem {
   display: flex;
-  flex-wrap: nowrap; /* Kartların alt satıra geçmesini engeller */
-  overflow-x: auto; /* Yana doğru kaydırma barı çıkarır */
-  gap: 25px;
-  padding: 10px 10px 40px 10px; /* Gölgelerin kesilmemesi ve scroll bar için boşluk */
-  scrollbar-width: thin;
-  scrollbar-color: #556b2f #f0f4ea;
+  position: relative;
+  margin-bottom: 80px; /* Aralığı biraz açtık */
+  width: 100%;
 }
 
-/* Chrome/Safari için özel scrollbar tasarımı */
-.timelineRow::-webkit-scrollbar {
-  height: 8px;
+/* Sol Kart Yerleşimi */
+.timelineItem.left {
+  justify-content: flex-end;
+  padding-right: 50%;
 }
-.timelineRow::-webkit-scrollbar-track {
-  background: #f0f4ea;
-  border-radius: 10px;
+
+/* Sağ Kart Yerleşimi */
+.timelineItem.right {
+  justify-content: flex-start;
+  padding-left: 50%;
 }
-.timelineRow::-webkit-scrollbar-thumb {
+
+/* Zaman Noktası (Çizgi üzerindeki daire) */
+.timelineDot {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  width: 18px;
+  height: 18px;
   background: #556b2f;
-  border-radius: 10px;
+  border: 4px solid #fcfdfa;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+}
+
+/* Saat Etiketi - En Önemli Düzeltme Burası */
+.timeLabel {
+  position: absolute;
+  top: -5px;
+  font-weight: 800;
+  color: #556b2f;
+  font-size: 1.4rem;
+  white-space: nowrap;
+}
+
+/* Kart Soldaysa saat Çizginin SAĞINDA dursun */
+.left .timeLabel {
+  left: 30px;
+}
+
+/* Kart Sağdaysa saat Çizginin SOLUNDA dursun */
+.right .timeLabel {
+  right: 30px;
+}
+
+/* Kart İçeriği */
+.timelineContent {
+  width: 100%;
+  padding: 0 40px;
 }
 
 .timelineCard {
-  min-width: 280px; /* Kartın ne kadar küçülebileceğini belirler. Tek sıra için kritik! */
-  flex-shrink: 0; /* Kartların sıkışmasını engeller */
   background: white;
   border-radius: 20px;
-  padding: 30px 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(27, 51, 32, 0.05);
   border: 1px solid #f0f4ea;
-  box-shadow: 0 10px 30px rgba(27, 51, 32, 0.04);
   transition: all 0.3s ease;
 }
 
 .timelineCard:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(27, 51, 32, 0.08);
   border-color: #d4af37;
+  box-shadow: 0 20px 40px rgba(27, 51, 32, 0.08);
 }
 
-.cardHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
+.cardInfo {
+  padding: 20px;
 }
 
-.timeCircle {
-  background: #1b3320;
-  color: white;
-  font-weight: bold;
-  font-size: 1.1rem;
-  padding: 8px 16px;
-  border-radius: 50px;
-}
-
-.iconBox {
-  font-size: 2.5rem;
-  color: #d4af37;
-  opacity: 0.8;
-}
-
-.cardTitle {
+.cardInfo h3 {
+  margin: 0;
   color: #1b3320;
   font-size: 1.3rem;
-  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.cardDesc {
+.cardInfo p {
+  margin: 8px 0 0;
   color: #666;
   font-size: 0.95rem;
   line-height: 1.5;
 }
 
-/* 4. SABİT VE KÜÇÜK HARİTA */
+.cardImageWrapper img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- 4. SABİT VE KÜÇÜK HARİTA --- */
 .mapSection {
   padding: 0 5%;
   margin: 0 auto 50px;
@@ -221,8 +380,8 @@
   border-radius: 20px;
   padding: 15px;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  max-width: 800px; /* Haritayı küçültmek için sınırı belirledik */
-  margin: 0 auto; /* Haritayı ortalar */
+  max-width: 800px;
+  margin: 0 auto;
   border: 1px solid #eef2e8;
 }
 
@@ -230,5 +389,93 @@
   width: 100%;
   height: auto;
   border-radius: 10px;
-  display: block; /* Altındaki ekstra boşlukları kaldırır */
+  display: block;
 }
+
+/* --- 5. MOBİL UYUMLULUK --- */
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+    transform: none;
+  }
+  
+  .timelineItem, .timelineItem.left, .timelineItem.right {
+    padding-left: 40px;
+    padding-right: 0;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .timelineDot {
+    left: 20px;
+    transform: translateX(-50%);
+  }
+  
+  /* Mobilde saatleri kartın hemen üstüne, sol tarafa sabitliyoruz */
+  .left .timeLabel, .right .timeLabel {
+    left: 35px !important;
+    right: auto !important;
+    top: -30px; /* Kartın biraz üstünde */
+    font-size: 1.2rem;
+  }
+
+  .timelineContent {
+    padding: 0 10px;
+  }
+
+  .animalName {
+    font-size: 2.5rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+}
+/* --- 4. SABİT VE KÜÇÜK HARİTA --- */
+.mapSection {
+  padding: 0 5%;
+  margin: 0 auto 50px;
+}
+
+.mapFrame {
+  background: white;
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #eef2e8;
+}
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* --- 5. MOBİL UYUMLULUK --- */
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+  }
+  
+  .timelineItem, .timelineItem.right {
+    padding-left: 45px;
+    padding-right: 0;
+    justify-content: flex-start;
+  }
+  
+  .timelineDot {
+    left: 20px;
+  }
+  
+  .timeLabel {
+    left: 30px !important;
+    right: auto !important;
+  }
+
+  .animalName {
+    font-size: 2.5rem;
+  }
+} 
