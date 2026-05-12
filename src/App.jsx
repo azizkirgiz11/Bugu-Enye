@@ -7,10 +7,12 @@ import Tickets from './pages/Tickets'
 import About from './pages/About'
 import Home from './pages/Home';
 import BuyTicket from './pages/BuyTicket';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   return (
     <div>
+      <ScrollToTop/>
       <Header/>
       <Routes>
         <Route path="/" element={<Home/>} />
