@@ -8,10 +8,13 @@ import About from './pages/About'
 import Home from './pages/Home';
 import BuyTicket from './pages/BuyTicket';
 import ScrollToTop from './components/ScrollToTop';
+import { CssBaseline } from '@mui/material';
+import BackToTop from './components/BackToTop';
 
 const App = () => {
   return (
     <div>
+      <CssBaseline />
       <ScrollToTop/>
       <Header/>
       <Routes>
@@ -20,6 +23,7 @@ const App = () => {
         <Route path="/tickets" element={<Tickets/>} />
         <Route path="/buy-ticket" element={<BuyTicket/>} />
       </Routes>
+      <BackToTop />
       <Footer/>
     </div>
   )
